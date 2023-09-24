@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Rush - The Movie</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<h1>Rush</h1>
+				<nav>
+					<ul>
+						<li><a href="index.html">About</a></li>
+						<li><a href="movie.html">Movie</a></li>
+						<li><a href="bios.html">Bios</a></li>
+					</ul>
+				</nav>
+				
+			</header>
+<!-- The start of the page would be similar to the main template -->
+<!-- ... -->
+
+<!-- Pomodoro Timer Section -->
+<section id="pomodoro" class="main style1 dark fullscreen">
+    <div class="content">
+        <header>
+            <h2>Pomodoro Timer</h2>
+        </header>
+        
+        <div class="timer">
+            <p id="timer-display">25:00</p>
+            <button id="start-btn">Start</button>
+            <button id="reset-btn">Reset</button>
+        </div>
+        
+        <script>
+            let isRunning = false;
+            let interval;
+            let timeLeft = 25 * 60;
+
+            const display = document.getElementById('timer-display');
+            const startBtn = document.getElementById('start-btn');
+            const resetBtn = document.getElementById('reset-btn');
+
+            function formatTime(seconds) {
+                const mins = Math.floor(seconds / 60);
+                const secs = seconds % 60;
+                return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+            }
+
+            startBtn.addEventListener('click', function() {
+                if (isRunning) {
+                    clearInterval(interval);
+                    startBtn.innerText = 'Start';
+                } else {
+                    interval = setInterval(function() {
+                        timeLeft--;
+                        display.innerText = formatTime(timeLeft);
+                        if (timeLeft <= 0) {
+                            clearInterval(interval);
+                            alert('Break time!');
+                            timeLeft = 5 * 60; // 5-minute break
+                        }
+                    }, 1000);
+                    startBtn.innerText = 'Pause';
+                }
+                isRunning = !isRunning;
+            });
+
+            resetBtn.addEventListener('click', function() {
+                clearInterval(interval);
+                timeLeft = 25 * 60;
+                display.innerText = formatTime(timeLeft);
+                startBtn.innerText = 'Start';
+                isRunning = false;
+            });
+        </script>
+    </div>
+</section>
+
+<!-- The end of the page would be similar to the main template -->
+<!-- ... -->
+
+<!-- Footer -->
+<footer id="footer">
+
+    <!-- Icons -->
+        <ul class="icons">
+            <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+            <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+            <li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
+        </ul>
+
+    <!-- Menu -->
+        <ul class="menu">
+            <li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+        </ul>
+
+</footer>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.poptrox.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
