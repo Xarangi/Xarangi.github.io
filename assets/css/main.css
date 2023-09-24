@@ -115,6 +115,26 @@ input, select, textarea {
     width: 400px;
     height: auto;
 }
+.arrow-container {
+    position: absolute;
+    bottom: 8em;
+    right: 5em;
+    text-align: left;
+}
+
+.big-arrow {
+    font-size: 15em;  /* Adjust size as needed */
+    color: #fff;  /* Adjust color as needed */
+    text-decoration: none; 
+    transition: color 0.3s ease;
+    display: block;
+}
+
+.big-arrow:hover,
+.arrow-container a:hover {
+    color: #aaa;  /* Adjust hover color as needed */
+}
+
 
 /* For smaller screens */
 @media (max-width: 768px) {
@@ -2328,7 +2348,7 @@ input, select, textarea {
 /* Intro */
 
 	#intro {
-		background: url("images/overlay.png"), url("../../images/intro.jpg");
+		background: url("images/overlay.png"), url("../../images/rush.jpg");
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, bottom center;
@@ -2338,7 +2358,7 @@ input, select, textarea {
 /* One */
 
 	#one {
-		background: url("images/overlay.png"), url("../../images/one.jpg");
+		background: url("images/overlay.png"), url("../../images/time.jpg");
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;
@@ -2347,11 +2367,36 @@ input, select, textarea {
 /* Two */
 
 	#two {
-		background: url("images/overlay.png"), url("../../images/two.jpg");
+		background: url("images/overlay.png"), url("../../images/work.jpg");
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;
 	}
+/* Three */
+
+	#three {
+		background: url("images/overlay.png"), url("../../images/stress.jpg");
+		background-size: 256px 256px, cover;
+		background-attachment: fixed, fixed;
+		background-position: top left, center center;
+	}
+/* One */
+
+#five {
+	background: url("images/overlay.png"), url("../../images/one.jpg");
+	background-size: 256px 256px, cover;
+	background-attachment: fixed, fixed;
+	background-position: top left, center center;
+}
+
+/* Four */
+
+#four {
+	background: url("images/overlay.png"), url("../../images/two.jpg");
+	background-size: 256px 256px, cover;
+	background-attachment: fixed, fixed;
+	background-position: top left, center center;
+}
 /*Pomodoro*/
 	#pomodoro {
 		background: url("images/overlay.png"), url("../../images/two.jpg");
